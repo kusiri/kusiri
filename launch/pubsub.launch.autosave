@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="kusiri_tutorial" type="publisher" name="extra_publisher"/>
+  <node pkg="kusiri_tutorial" type="subscriber" name="extra_subscriber" output="screen"/>
+</launch>
