@@ -1,4 +1,10 @@
 <launch>
+<param name ="goal_x" value=" 7.0"/>
+<param name ="goal_Y" value=" 7.0"/>
+<param name ="surge_gain" value="1.0"/>
+<param name ="orientation_gain" value= "1.0"/>
+
+<param name ="k_P" value="2.0"/>
   <node pkg="turtlesim" type="turtlesim_node" name="extra_turtle"/>
   <node pkg="kusiri_tutorial" type="turtle_controller" name="extra_controller" output="screen"/>
 </launch>
