@@ -15,8 +15,15 @@ void posecallback(const turtlesim::Pose::ConstPtr& pose_msg) {
   //TODO:
   //compute orentation_control = ...
   //Hint: use atan2(y_error,x_error)
+double theta_error = atan2(y_error, x_error) -pose_msg->theta;
 
-  forward_control = k_Pf * x_error;
+  forward_control =1.0;
+
+  orientation_control =k_Po * theta_error;
+  if (pow(x_error, 2.0) + pow(y_error, 2.0) < 0.01) {
+  forward_control =0.0;
+  orientation_control = 0.0;
+}
 }
 
 int main(int argc, char** argv){
@@ -38,7 +45,7 @@ int main(int argc, char** argv){
 
     geometry_msgs::Twist controls;
     controls.linear.x = forward_control;
-    controls.angular.z = orientation_gain;
+    controls.angular.z = orientation_control ;
 
     control_pub.publish(controls);
 
