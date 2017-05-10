@@ -145,7 +145,7 @@ add_executable(turtle_controller src/turtle_controller.cpp)
 add_dependencies(turtle_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(turtle_controller ${catkin_LIBRARIES})
 
-add_executable(pushup_maker src/turtle_controller.cpp)
+add_executable(pushup_maker src/pushup_maker.cpp include/kusiri_tutorial/pushup_maker.h)
 add_dependencies(pushup_maker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(pushup_maker ${catkin_LIBRARIES})
 
